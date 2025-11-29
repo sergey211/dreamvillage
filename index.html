@@ -379,14 +379,13 @@
       <div class="video-overlay"><h2>Погрузитесь в уют</h2><p>Тишина, природа, тёплый свет и аромат дров</p></div>
     </div>
 
-    <a href="https://forms.office.com/r/NvRPqY5qeP?origin=lprLink" class="btn animate" target="_blank">📅 Отправить заявку на бронь</a>
-
     <div class="section animate">
       <h3>🎁 Подарочный сертификат</h3>
       <div class="photo-block" style="margin:20px 0 15px;"><img src="pics/cert.jpg" alt="Сертификат"><div class="photo-caption">Идеальный подарок — отдых в A-frame домике</div></div>
       <div class="add-service"><strong>Сертификат даёт право:</strong><br>• Проживание на <strong>ОДНИ СУТКИ ДЛЯ ДВОИХ</strong><br>• Срок действия — <strong>6 месяцев</strong><br><small>В стильном конверте с печатью</small></div>
-      <a href="https://wa.me/375447788282" class="btn" style="margin:20px 20px 5px;" target="_blank">🎁 Заказать сертификат</a>
-    </div>
+      <!--a href="https://wa.me/375447788282" class="btn" style="margin:20px 20px 5px;" target="_blank">🎁 Заказать сертификат</a-->
+      <button type="button" class="btn" style="margin:20px 20px 5px;" onclick="scrollToContacts()">🎁 Заказать сертификат</button>
+	</div>
 
     <div class="section animate">
       <h3>🎁 Скидки</h3>
@@ -404,7 +403,7 @@
       <p style="margin-bottom:12px;"><strong>Минская обл., Воложинский р-н, д. Яновщина, дом 3</strong><br>50 км от МКАД • 3 км от Ивенца</p>
 
 	
-		<a href="https://yandex.com/maps/?ll=26.7876429,53.8824433&z=15&pt=26.7876429,53.8824433" 
+		<a href="https://yandex.by/maps/org/dream_village/204843078811/?ll=26.789725%2C53.882351&pt=26.7876429%2C53.8824433&z=18.21" 
          class="btn btn-small map" target="_blank" style="margin-bottom:10px;">
        🚗 Открыть в Яндекс.Картах
       </a>
@@ -444,16 +443,20 @@
   <p lang="en" style="margin-bottom:15px; font-size:14px; color:#e67e22; text-align:center;">
     💡 Minimum 1 night. Specify dates in your message.
   </p>
+  
+  
+    <!--a href="https://forms.office.com/r/NvRPqY5qeP?origin=lprLink" class="btn animate" target="_blank">📅 Отправить заявку на бронь</a>
+
 
   <a href="https://wa.me/375447788282?text=Хочу%20забронировать%20домик%20на%20[укажите%20даты]%20из%20календаря" 
      class="btn" target="_blank" style="margin:20px 20px 5px;">
     <span lang="ru">📅 Забронировать через WhatsApp</span>
     <span lang="en">📅 Book via WhatsApp</span>
   </a>
-</div>
+</div-->
 
-    <div class="section animate">
-      <h3>📞 Связаться с нами</h3>
+    <div class="section animate" id="contacts">
+	  <h3>📞 Связаться с нами</h3>
       <p style="margin-bottom:15px; font-size:16px;"><strong>Телефон:</strong> <a href="tel:+375447788282" style="color:#2ecc71; text-decoration:none; font-weight:600;">+375 (44) 778-82-82</a></p>
       <div class="action-buttons">
         <a href="https://wa.me/375447788282" class="btn btn-small whatsapp" target="_blank">📱 WhatsApp</a>
@@ -577,7 +580,9 @@
       <h3>🎁 Gift Certificate</h3>
       <div class="photo-block" style="margin:20px 0 15px;"><img src="pics/cert.jpg" alt="Gift Certificate"><div class="photo-caption">Perfect gift — a night in A-frame</div></div>
       <div class="add-service"><strong>Valid for:</strong><br>• <strong>1 NIGHT FOR TWO</strong><br>• Valid for <strong>6 months</strong><br><small>In a stylish envelope with wax seal</small></div>
-      <a href="https://wa.me/375447788282" class="btn" style="margin:20px 20px 5px;" target="_blank">🎁 Order Certificate</a>
+       <button type="button" class="btn" style="margin:20px 20px 5px;" onclick="scrollToContacts()">🎁 Order Certificate</button>
+
+	  <!--a href="https://wa.me/375447788282" class="btn" style="margin:20px 20px 5px;" target="_blank">🎁 Order Certificate</a-->
     </div>
 
     <div class="section animate">
@@ -595,7 +600,7 @@
       <h3>📍 Location</h3>
       <p style="margin-bottom:12px;"><strong>Minsk Region, Valozhyn District, Yanovshchina, House 3</strong><br>50 km from MKAD • 3 km from Ivyanets</p>
  
-	<a href="https://yandex.com/maps/?ll=26.7876429,53.8824433&z=15&pt=26.7876429,53.8824433" 
+	<a href="https://yandex.com/maps/org/dream_village/204843078811/?ll=26.789725%2C53.882351&pt=26.7876429%2C53.8824433&z=18.21" 
          class="btn btn-small map" target="_blank" style="margin-bottom:10px;">
        🚗 Open in Yandex.Maps
       </a>
@@ -608,7 +613,7 @@
 	
 
 
-    <div class="section animate">
+    <div class="section animate" id="contacts">
       <h3>📞 Contact Us</h3>
       <p style="margin-bottom:15px; font-size:16px;"><strong>Phone:</strong> <a href="tel:+375447788282" style="color:#2ecc71; text-decoration:none; font-weight:600;">+375 (44) 778-82-82</a></p>
       <div class="action-buttons">
@@ -633,6 +638,13 @@
       if (btn.getAttribute('onclick').includes("'" + lang + "'")) btn.classList.add('active');
     });
   }
+  
+	  function scrollToContacts() {
+	  const contactsSection = document.getElementById('contacts');
+	  if (contactsSection) {
+		contactsSection.scrollIntoView({ behavior: 'smooth' });
+	  }
+	}
 
   // При загрузке — восстановить язык
   window.onload = function() {
