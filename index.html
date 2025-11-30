@@ -7,6 +7,8 @@
 	<!-- Для современных браузеров и устройств -->
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
   <!-- ==== БАЗОВЫЕ МЕТА ==== -->
@@ -117,6 +119,22 @@
     }
     .btn:hover::before { left: 100%; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(46,204,113,0.4); }
+		.fixed-booking-button {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  width: calc(100% - 40px); /* отступы по 20px слева и справа */
+	  max-width: 480px; /* как у .container */
+	  z-index: 1000;
+	}
+
+	.fixed-booking-button .btn {
+	  margin: 0;
+	  padding: 16px;
+	  font-size: 18px;
+	  box-shadow: 0 6px 20px rgba(46,204,113,0.4);
+	}
 
     /* БЛОК С ФОТО */
     .photo-block {
@@ -197,6 +215,52 @@
     /* АНИМАЦИЯ */
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     .animate { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.6s ease forwards; }
+	/* Стили для карусели Swiper */
+	.photo-carousel {
+	  border-radius: 20px;
+	  overflow: hidden;
+	  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+	}
+	.photo-carousel .swiper-slide {
+	  position: relative;
+	  height: 320px;
+	}
+	.photo-carousel .swiper-slide img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;
+	}
+	.photo-carousel .photo-caption {
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+	  color: white;
+	  padding: 30px 20px 20px;
+	  font-size: 16px;
+	  font-weight: 500;
+	  text-align: center;
+	}
+	.swiper-pagination {
+	  bottom: 12px !important;
+	}
+	.swiper-pagination-bullet {
+	  width: 10px;
+	  height: 10px;
+	  opacity: 0.7;
+	}
+	.swiper-pagination-bullet-active {
+	  background: white;
+	  opacity: 1;
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+	  color: white;
+	  --swiper-navigation-size: 28px;
+	}
+
 
     /* ЯЗЫКОВЫЕ КЛАССЫ */
     [lang="en"] { display: none; }
@@ -269,12 +333,85 @@
       </ul>
     </div>
 
-    <div class="photo-block animate"><img src="pics/1.jpg" alt="Горячая купель на дровах у A-frame домика под Минском зимой"><div class="photo-caption">Горячая купель на дровах 🌲🔥</div></div>
+	<!-- Swiper карусель -->
+<div class="swiper photo-carousel animate" style="margin:30px 0;">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="pics/1.jpg" alt="Горячая купель на дровах у A-frame домика под Минском зимой">
+      <div class="photo-caption">Горячая купель на дровах 🌲🔥</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/sauna5.jpg" alt="Отдельная финская сауна с комнатой отдыха в аренду под Минском">
+      <div class="photo-caption">Отдельная финская сауна 🧖‍♀️ </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/3.jpg" alt="Атмосферный вечер в A-frame домике с прекрасным видом">
+      <div class="photo-caption">Атмосферный вечер ✨</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/plast2.jpg" alt="Виниловый проигрыватель и коллекция пластинок в уютном A-frame домике">
+      <div class="photo-caption">Виниловый проигрыватель и коллекция пластинок в вашем распоряжении 🎶 </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/2.jpg" alt="Полноценная кухня в деревянном A-frame домике с посудой и техникой">
+      <div class="photo-caption">Полноценная кухня и стол на 4 гостей 🍽️</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/4.jpg" alt="Две спальных зоны в A-frame домике: диван и мансарда с ортопедическими матрасами">
+      <div class="photo-caption">Две спальных зоны - идеально для 2 пар 🛏️</div>
+    </div>
+  </div>
+
+  <!-- Стрелки (опционально) -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Пагинация (точки внизу) -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- КАЛЕНДАРЬ БРОНИРОВАНИЯ -->
+<div class="section animate">
+  <h3 lang="ru">📅 Доступные даты</h3>
+  <h3 lang="en">📅 Available Dates</h3>
+  <p lang="ru" style="margin-bottom:12px; font-size:15px; color:#636e72;">
+    Белые дни — свободно. Закрашенные — забронировано. Выберите дату и напишите нам!
+  </p>
+  <p lang="en" style="margin-bottom:12px; font-size:15px; color:#636e72;">
+    White days — available. Shaded — booked. Pick a date and message us!
+  </p>
+
+  <!-- EMBED GOOGLE КАЛЕНДАРЬ -->
+  <div style="border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); margin-bottom:15px;">
+    <iframe 
+      src="https://calendar.google.com/calendar/embed?height=420&wkst=2&ctz=Europe%2FMinsk&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=90a363baae2fce225e134ba042b54b16f233fc7fba5d6c78cbcf079435f9b472%40group.calendar.google.com&color=%232ecc71" 
+      style="border:0; width:100%; height:420px; display:block;" 
+      frameborder="0" 
+      scrolling="no" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <p lang="ru" style="margin-bottom:15px; font-size:14px; color:#e67e22; text-align:center;">
+    💡 Минимум 1 ночь. Для брони — укажите даты в сообщении.
+  </p>
+  <p lang="en" style="margin-bottom:15px; font-size:14px; color:#e67e22; text-align:center;">
+    💡 Minimum 1 night. Specify dates in your message.
+  </p>
+  
+       <!--button type="button" class="btn" style="margin:20px 20px 5px;" onclick="scrollToContacts()">📅 Связаться для брони</button-->
+
+  
+    <!--a href="https://forms.office.com/r/NvRPqY5qeP?origin=lprLink" class="btn animate" target="_blank">📅 Отправить заявку на бронь</a>
+
+ 
+
+    <!--div class="photo-block animate"><img src="pics/1.jpg" alt="Горячая купель на дровах у A-frame домика под Минском зимой"><div class="photo-caption">Горячая купель на дровах 🌲🔥</div></div>
     <div class="photo-block animate"><img src="pics/sauna5.jpg" alt="Отдельная финская сауна с комнатой отдыха в аренду под Минском"><div class="photo-caption">Отдельная финская сауна 🧖‍♀️ </div></div>
     <div class="photo-block animate"><img src="pics/3.jpg" alt="Атмосферный вечер в A-frame домике с прекрасным видом"><div class="photo-caption">Атмосферный вечер ✨</div></div>
     <div class="photo-block animate"><img src="pics/plast2.jpg" alt="Виниловый проигрыватель и коллекция пластинок в уютном A-frame домике"><div class="photo-caption">Виниловый проигрыватель и коллекция пластинок в вашем распоряжении 🎶 </div></div>
     <div class="photo-block animate"><img src="pics/2.jpg" alt="Полноценная кухня в деревянном A-frame домике с посудой и техникой"><div class="photo-caption">Полноценная кухня и стол на 4 гостей 🍽️</div></div>
-    <div class="photo-block animate"><img src="pics/4.jpg" alt="Две спальных зоны в A-frame домике: диван и мансарда с ортопедическими матрасами"><div class="photo-caption">Две спальных зоны - идеально для 2 пар 🛏️</div></div>
+    <div class="photo-block animate"><img src="pics/4.jpg" alt="Две спальных зоны в A-frame домике: диван и мансарда с ортопедическими матрасами"><div class="photo-caption">Две спальных зоны - идеально для 2 пар 🛏️</div></div-->
 
     <div class="section animate">
       <h3>💰 Стоимость проживания</h3>
@@ -416,34 +553,7 @@
   </div>
   
 <!-- КАЛЕНДАРЬ БРОНИРОВАНИЯ -->
-<div class="section animate">
-  <h3 lang="ru">📅 Доступные даты</h3>
-  <h3 lang="en">📅 Available Dates</h3>
-  <p lang="ru" style="margin-bottom:12px; font-size:15px; color:#636e72;">
-    Белые дни — свободно. Закрашенные — забронировано. Выберите дату и напишите нам!
-  </p>
-  <p lang="en" style="margin-bottom:12px; font-size:15px; color:#636e72;">
-    White days — available. Shaded — booked. Pick a date and message us!
-  </p>
 
-  <!-- EMBED GOOGLE КАЛЕНДАРЬ -->
-  <div style="border-radius:16px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); margin-bottom:15px;">
-    <iframe 
-      src="https://calendar.google.com/calendar/embed?height=420&wkst=2&ctz=Europe%2FMinsk&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=MONTH&src=90a363baae2fce225e134ba042b54b16f233fc7fba5d6c78cbcf079435f9b472%40group.calendar.google.com&color=%232ecc71" 
-      style="border:0; width:100%; height:420px; display:block;" 
-      frameborder="0" 
-      scrolling="no" 
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <p lang="ru" style="margin-bottom:15px; font-size:14px; color:#e67e22; text-align:center;">
-    💡 Минимум 1 ночь. Для брони — укажите даты в сообщении.
-  </p>
-  <p lang="en" style="margin-bottom:15px; font-size:14px; color:#e67e22; text-align:center;">
-    💡 Minimum 1 night. Specify dates in your message.
-  </p>
-  
   
     <!--a href="https://forms.office.com/r/NvRPqY5qeP?origin=lprLink" class="btn animate" target="_blank">📅 Отправить заявку на бронь</a>
 
@@ -627,6 +737,7 @@
   </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
   // Переключение языка
@@ -645,6 +756,24 @@
 		contactsSection.scrollIntoView({ behavior: 'smooth' });
 	  }
 	}
+	
+	// Инициализация карусели
+	const swiper = new Swiper('.photo-carousel', {
+	  loop: true,
+	  pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	  },
+	  navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	  },
+	  autoplay: {
+		delay: 4000,
+		disableOnInteraction: false,
+	  },
+	  effect: 'slide', // или 'fade' для плавного перехода
+	});
 
   // При загрузке — восстановить язык
   window.onload = function() {
@@ -652,6 +781,9 @@
     setLang(savedLang);
   };
 </script>
-
+<!-- Swiper JS -->
+<div class="fixed-booking-button">
+  <button type="button" class="btn" onclick="scrollToContacts()">📅 Связаться для брони</button>
+</div>
 </body>
 </html>
