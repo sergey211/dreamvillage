@@ -260,6 +260,54 @@
 	  color: white;
 	  --swiper-navigation-size: 28px;
 	}
+	.ny-carousel .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  border-radius: 12px;
+}
+.sauna-carousel,
+.ny-carousel {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  margin: 20px 0;
+}
+
+.sauna-carousel .swiper-slide,
+.ny-carousel .swiper-slide {
+  position: relative;
+  height: 300px;
+}
+
+.sauna-carousel .swiper-slide img,
+.ny-carousel .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sauna-carousel .photo-caption,
+.ny-carousel .photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Пагинация */
+.sauna-carousel .swiper-pagination,
+.ny-carousel .swiper-pagination {
+  bottom: 10px !important;
+}
 
 
     /* ЯЗЫКОВЫЕ КЛАССЫ */
@@ -449,10 +497,28 @@
 	  <h3 lang="ru">🧖‍♀️ Финская сауна</h3>
 	  <h3 lang="en">🧖‍♀️ Finnish Sauna</h3>
 
-	  <div class="photo-block animate"><img src="pics/sauna1.jpg" alt="Сауна с каменкой"><div class="photo-caption">Электрическая каменка Harvia — жар до 100 °C</div></div>
+	  <!--div class="photo-block animate"><img src="pics/sauna1.jpg" alt="Сауна с каменкой"><div class="photo-caption">Электрическая каменка Harvia — жар до 100 °C</div></div>
 	  <div class="photo-block animate"><img src="pics/sauna2.jpg" alt="Шайка и ковш в сауне"><div class="photo-caption">Всё для настоящего пара: шайка, ковш, эфирные масла</div></div>
-	  <div class="photo-block animate"><img src="pics/sauna3.jpg" alt="Зона отдыха в сауне"><div class="photo-caption">Уютная комната отдыха: чай, мёд, травы и самовар</div></div>
+	  <div class="photo-block animate"><img src="pics/sauna3.jpg" alt="Зона отдыха в сауне"><div class="photo-caption">Уютная комната отдыха: чай, мёд, травы и самовар</div></div-->
 
+<!-- Финская сауна — карусель -->
+<div class="swiper sauna-carousel animate">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="pics/sauna1.jpg" alt="Сауна с каменкой">
+      <div class="photo-caption">Электрическая каменка Harvia — жар до 100 °C</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/sauna2.jpg" alt="Шайка и ковш в сауне">
+      <div class="photo-caption">Всё для настоящего пара: шайка, ковш, эфирные масла</div>
+    </div>
+    <div class="swiper-slide">
+      <img src="pics/sauna3.jpg" alt="Зона отдыха в сауне">
+      <div class="photo-caption">Уютная комната отдыха: чай, мёд, травы и самовар</div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
 
 
 	  <p lang="ru" style="margin-top:12px; font-size:15px; color:#636e72;">
@@ -474,13 +540,32 @@
 	  <h2 lang="en" style="font-size:28px; text-align:center; margin-bottom:15px;">
 		🎄 Christmas & New Year 2025/2026 at Dream Village
 	  </h2>
+	  
+	  <!-- Новогодняя карусель -->
+	<div class="swiper ny-carousel animate">
+	  <div class="swiper-wrapper">
+		<div class="swiper-slide">
+		  <img src="pics/ny2.jpg" alt="Новогодняя атмосфера в A-frame домике">
+		</div>
+		<div class="swiper-slide">
+		  <img src="pics/ny.jpg" alt="Ёлка в домике Dream Village">
+		</div>
+		<div class="swiper-slide">
+		  <img src="pics/ny5.jpg" alt="Новогодние бокалы-ёлочки">
+		</div>
+		<div class="swiper-slide">
+		  <img src="pics/ny3.jpg" alt="Украшенная ёлка под окнами A-frame">
+		</div>
+	  </div>
+	  <div class="swiper-pagination"></div>
+	</div>
 
-	  <div class="photo-block animate"><img src="pics/ny2.jpg" alt="Новогодняя атмосфера в A-frame домике" style="border:3px solid #fff; box-shadow:0 8px 25px rgba(0,0,0,0.4);"></div>
+	  <!--div class="photo-block animate"><img src="pics/ny2.jpg" alt="Новогодняя атмосфера в A-frame домике" style="border:3px solid #fff; box-shadow:0 8px 25px rgba(0,0,0,0.4);"></div>
 	  <div class="photo-block animate"><img src="pics/ny.jpg" alt="Ёлка в домике Dream Village" style="border:3px solid #fff;"></div>
 	  <div class="photo-block animate"><img src="pics/ny5.jpg" alt="Новогодние бокалы-ёлочки" style="border:3px solid #fff;"></div>
 	  <div class="photo-block animate"><img src="pics/ny3.jpg" alt="Украшенная ёлка под окнами A-frame" style="border:3px solid #fff;"></div>
 
-	  <div style="background:rgba(255,255,255,0.15); padding:20px; border-radius:16px; margin:25px 0; text-align:center; backdrop-filter:blur(10px);">
+	  <div style="background:rgba(255,255,255,0.15); padding:20px; border-radius:16px; margin:25px 0; text-align:center; backdrop-filter:blur(10px);"-->
 
 
 		<p lang="ru" style="margin:15px 0; line-height:1.6;">
@@ -757,23 +842,31 @@
 	  }
 	}
 	
-	// Инициализация карусели
-	const swiper = new Swiper('.photo-carousel', {
-	  loop: true,
-	  pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	  },
-	  navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	  },
-	  autoplay: {
-		delay: 4000,
-		disableOnInteraction: false,
-	  },
-	  effect: 'slide', // или 'fade' для плавного перехода
-	});
+
+	// Основная галерея
+const mainCarousel = new Swiper('.photo-carousel', {
+  loop: true,
+  pagination: { el: '.photo-carousel .swiper-pagination', clickable: true },
+  navigation: {
+    nextEl: '.photo-carousel .swiper-button-next',
+    prevEl: '.photo-carousel .swiper-button-prev',
+  },
+  autoplay: { delay: 4000, disableOnInteraction: false },
+});
+
+// Сауна
+const saunaCarousel = new Swiper('.sauna-carousel', {
+  loop: true,
+  pagination: { el: '.sauna-carousel .swiper-pagination', clickable: true },
+  autoplay: { delay: 3500, disableOnInteraction: false },
+});
+
+// Новогодняя
+const nyCarousel = new Swiper('.ny-carousel', {
+  loop: true,
+  pagination: { el: '.ny-carousel .swiper-pagination', clickable: true },
+  autoplay: { delay: 3000, disableOnInteraction: false },
+});
 
   // При загрузке — восстановить язык
   window.onload = function() {
