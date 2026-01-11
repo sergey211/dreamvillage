@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://dreamvillage.by/$1",
+      "has": [
+        { "type": "host", "value": "www.dreamvillage.by" }
+      ],
+      "permanent": true
+    }
+  ]
+}
