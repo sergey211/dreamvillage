@@ -673,7 +673,7 @@
       <h3>🎁 Gift Certificate</h3>
       <div class="photo-block" style="margin:20px 0 15px;"><img src="pics/cert.jpg" alt="Gift Certificate"><div class="photo-caption">Perfect gift — a night in A-frame</div></div>
       <div class="add-service"><strong>Valid for:</strong><br>• <strong>1 NIGHT FOR TWO</strong><br>• Valid for <strong>6 months</strong><br><small>In a stylish envelope with wax seal</small></div>
-      <button type="button" class="btn" style="margin:20px 20px 5px;" onclick="scrollToContacts()">🎁 Order Certificate</button>
+      <button type="button" class="btn" style="margin:20px 20px 5px;" onclick="scrollToContactsEn()">🎁 Order Certificate</button>
     </div>
 
     <div class="section animate">
@@ -701,7 +701,7 @@
       </a>
     </div>
 
-    <div class="section animate" id="contacts">
+    <div class="section animate" id="contacts-en">
       <h3>📞 Contact Us</h3>
       <p style="margin-bottom:15px; font-size:16px;"><strong>Phone:</strong> <a href="tel:+375447788282" style="color:#2ecc71; text-decoration:none; font-weight:600;">+375 (44) 778-82-82</a></p>
       <div class="action-buttons">
@@ -716,7 +716,7 @@
 
 <!-- Фиксированная кнопка для английской версии -->
 <div class="fixed-booking-button">
-  <button type="button" class="btn" onclick="scrollToContacts()">📅 Book Now</button>
+  <button type="button" class="btn" onclick="scrollToContactsEn()">📅 Book Now</button>
 </div>
 
 </div> <!-- закрывающий div lang="en" -->
@@ -724,7 +724,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  // Переключение языка
+  // Переключение языка 
   function setLang(lang) {
     document.body.className = 'lang-' + lang;
     localStorage.setItem('lang', lang);
@@ -736,6 +736,13 @@
   
   function scrollToContacts() {
     const contactsSection = document.getElementById('contacts');
+    if (contactsSection) {
+      contactsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function scrollToContactsEn() {
+    const contactsSection = document.getElementById('contacts-en');
     if (contactsSection) {
       contactsSection.scrollIntoView({ behavior: 'smooth' });
     }
